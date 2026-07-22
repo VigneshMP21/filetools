@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PDF Tools Site
 
 A modern, privacy-friendly PDF utility website built with React, TypeScript, Vite, and Tailwind CSS.
@@ -22,3 +23,9 @@ npm run build
 
 ## Notes
 This implementation is front-end focused and demonstrates the requested workflow and UI patterns without requiring a backend service.
+=======
+# filetools
+whhcuwvg7yrgc8yegr
+
+vicky
+>>>>>>> 8baf31c (vicky)
