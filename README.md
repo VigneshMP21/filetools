@@ -7,6 +7,7 @@ A modern, privacy-friendly PDF utility website built with React, TypeScript, Vit
 - Reusable upload experience for PDF, JPG, JPEG, and PNG files
 - Tool pages for merge, split, compress, image conversion, rotation, page deletion, extraction, watermarking, and password protection
 - Privacy-first messaging with automatic cleanup guidance
+- Client-side processing flows that generate downloadable output artifacts for the supported actions
 
 ## Development
 ```bash
