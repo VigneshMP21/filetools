@@ -1,4 +1,23 @@
-# filetools
-whhcuwvg7yrgc8yegr
+# PDF Tools Site
 
-Im Yashu from my branch..........
+A modern, privacy-friendly PDF utility website built with React, TypeScript, Vite, and Tailwind CSS.
+
+## Features
+- Responsive landing page and tool catalog
+- Reusable upload experience for PDF, JPG, JPEG, and PNG files
+- Tool pages for merge, split, compress, image conversion, rotation, page deletion, extraction, watermarking, and password protection
+- Privacy-first messaging with automatic cleanup guidance
+
+## Development
+```bash
+npm install
+npm run dev
+```
+
+## Production build
+```bash
+npm run build
+```
+
+## Notes
+This implementation is front-end focused and demonstrates the requested workflow and UI patterns without requiring a backend service.
