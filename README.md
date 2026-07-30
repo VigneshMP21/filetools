@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # PDF Tools Site
 
 A modern, privacy-friendly PDF utility website built with React, TypeScript, Vite, and Tailwind CSS.
@@ -23,4 +21,3 @@ npm run build
 
 ## Notes
 This implementation is front-end focused and demonstrates the requested workflow and UI patterns without requiring a backend service.
->>>>>>> ef8d617 (Basic Ui and tool implementation)
