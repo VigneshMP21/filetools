@@ -11,6 +11,7 @@ from app.api.auth.routes import router as auth_router
 from app.api.user.routes import router as user_router
 from app.api.upload.routes import router as upload_router
 from app.api.health.routes import router as health_router
+from app.api.tools.routes import router as tools_router
 
 Base.metadata.create_all(bind=engine)
 
@@ -40,6 +41,7 @@ app.include_router(auth_router)
 app.include_router(user_router)
 app.include_router(upload_router)
 app.include_router(health_router)
+app.include_router(tools_router)
 
 
 @app.get("/")

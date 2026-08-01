@@ -13,6 +13,7 @@ import DashboardSettingsPage from '../pages/dashboard/DashboardSettingsPage'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
 import DashboardLayout from '../components/layout/DashboardLayout'
+import PdfToWordPage from '../pdf-tools/pdf-to-word'
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { isAuthenticated, isLoading } = useAuth()
@@ -35,6 +36,15 @@ export default function AppRoutes() {
         <>
           <Navbar />
           <HomePage />
+          <Footer />
+        </>
+      } />
+
+      {/* Tools */}
+      <Route path="/tools/pdf-to-word" element={
+        <>
+          <Navbar />
+          <PdfToWordPage />
           <Footer />
         </>
       } />
