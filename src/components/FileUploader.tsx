@@ -22,8 +22,14 @@ export default function FileUploader({ accept, multiple = false, maxFiles = 1, m
     const files = Array.from(incoming);
     if (!files.length) return;
 
-    if (files.length > maxFiles) {
+    const availableSlots = maxFiles - items.length;
+    if (availableSlots <= 0) {
       setError(`Only ${maxFiles} file${maxFiles > 1 ? 's' : ''} are allowed.`);
+      return;
+    }
+
+    if (files.length > availableSlots) {
+      setError(`Only ${availableSlots} more file${availableSlots > 1 ? 's' : ''} can be added.`);
       return;
     }
 
@@ -42,13 +48,16 @@ export default function FileUploader({ accept, multiple = false, maxFiles = 1, m
       return;
     }
 
-    setItems((prev) => [...prev, ...nextItems]);
+    const mergedItems = [...items, ...nextItems];
+    setItems(mergedItems);
     setError(null);
-    onFilesSelected(files);
+    onFilesSelected(mergedItems.map((item) => item.file));
   };
 
   const removeItem = (id: string) => {
-    setItems((prev) => prev.filter((item) => item.id !== id));
+    const nextItems = items.filter((item) => item.id !== id);
+    setItems(nextItems);
+    onFilesSelected(nextItems.map((item) => item.file));
   };
 
   return (
