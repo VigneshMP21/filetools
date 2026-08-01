@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import FileUploader from '../components/FileUploader';
 import { buildPdfToJpgOutput } from '../services/processing';
 
@@ -6,10 +6,21 @@ export default function PdfToJpgPage() {
   const [files, setFiles] = useState<File[]>([]);
   const [status, setStatus] = useState<'waiting' | 'processing' | 'completed'>('waiting');
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
-  const [downloadName, setDownloadName] = useState('pdf-preview-pack.html');
+  const [downloadName, setDownloadName] = useState('pdf-preview.jpg');
+
+  useEffect(() => {
+    return () => {
+      if (downloadUrl) {
+        URL.revokeObjectURL(downloadUrl);
+      }
+    };
+  }, [downloadUrl]);
 
   const handleProcess = async () => {
     if (!files.length) return;
+    if (downloadUrl) {
+      URL.revokeObjectURL(downloadUrl);
+    }
     setStatus('processing');
     const result = await buildPdfToJpgOutput(files);
     setDownloadUrl(URL.createObjectURL(result.blob));
